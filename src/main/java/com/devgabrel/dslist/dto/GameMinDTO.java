@@ -1,6 +1,7 @@
 package com.devgabrel.dslist.dto;
 
 import com.devgabrel.dslist.entities.Game;
+import com.devgabrel.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -9,7 +10,6 @@ public class GameMinDTO {
     private int year;
     private String imgUrl;
     private String shortDescription;
-
 
     public GameMinDTO() {
     }
@@ -20,6 +20,14 @@ public class GameMinDTO {
         this.year = year;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
     }
 
     public GameMinDTO(Game entity){
