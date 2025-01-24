@@ -8,46 +8,46 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "tb_game_list")
+@Entity // Define como uma entidade JPA.
+@Table(name = "tb_game_list") // Mapeia para a tabela "tb_game_list".
 public class GameList {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // Define a chave primária.
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Chave primária gerada automaticamente.
     private long id;
-    private String name;
+    private String name; // Nome da lista.
 
-    public GameList() {
+    public GameList() { // Construtor padrão.
     }
     
-    public GameList(long id, String name) {
+    public GameList(long id, String name) { // Construtor com argumentos.
         this.id = id;
         this.name = name;
     }
 
-    public long getId() {
+    public long getId() { // Retorna o ID.
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(long id) { // Define o ID.
         this.id = id;
     }
 
-    public String getName() {
+    public String getName() { // Retorna o nome.
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) { // Define o nome.
         this.name = name;
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode() { // Calcula o hash code com base no ID.
         return Objects.hash(id);
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj) { // Compara objetos com base no ID.
         if (this == obj)
             return true;
         if (obj == null)

@@ -11,10 +11,10 @@ public class GameMinDTO {
     private String imgUrl;
     private String shortDescription;
 
-    public GameMinDTO() {
+    public GameMinDTO() { // Construtor padrão.
     }
 
-    public GameMinDTO(long id, String title, int year, String imgUrl, String shortDescription) {
+    public GameMinDTO(long id, String title, int year, String imgUrl, String shortDescription) { // Construtor com todos os atributos.
         this.id = id;
         this.title = title;
         this.year = year;
@@ -22,7 +22,7 @@ public class GameMinDTO {
         this.shortDescription = shortDescription;
     }
 
-    public GameMinDTO(GameMinProjection projection) {
+    public GameMinDTO(GameMinProjection projection) { // Construtor que recebe uma projeção GameMinProjection.
         id = projection.getId();
         title = projection.getTitle();
         year = projection.getYear();
@@ -30,7 +30,7 @@ public class GameMinDTO {
         shortDescription = projection.getShortDescription();
     }
 
-    public GameMinDTO(Game entity){
+    public GameMinDTO(Game entity){ // Construtor que recebe a entidade Game.
         id = entity.getId();
         title = entity.getTitle();
         year = entity.getYear();
@@ -38,23 +38,23 @@ public class GameMinDTO {
         shortDescription = entity.getShortDescription();
     }
 
-    public long getId() {
+    public long getId() { // Retorna o ID.
         return id;
     }
 
-    public String getTitle() {
+    public String getTitle() { // Retorna o título.
         return title;
     }
 
-    public int getYear() {
+    public int getYear() { // Retorna o ano.
         return year;
     }
 
-    public String getImgUrl() {
+    public String getImgUrl() { // Retorna a URL da imagem.
         return imgUrl;
     }
 
-    public String getShortDescription() {
+    public String getShortDescription() { // Retorna a descrição curta.
         return shortDescription;
     }
 }

@@ -9,32 +9,32 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "tb_game")
+@Entity // Define como uma entidade JPA.
+@Table(name = "tb_game") // Mapeia para a tabela "tb_game".
 public class Game {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // Define a chave primária.
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Chave primária gerada automaticamente.
     private long id;
     private String title;
 
-    @Column(name = "release_year")
+    @Column(name = "release_year") // Mapeia a coluna "release_year".
     private int year;
     private String genre;
     private String platforms;
     private double score;
     private String imgUrl;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT") // Define o tipo da coluna como TEXT.
     private String shortDescription;
     
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT") // Define o tipo da coluna como TEXT.
     private String longDescription;
 
-    public Game() {
+    public Game() { // Construtor padrão.
     }
 
-    public Game(long id, String title, int year, String genre, String platforms, double score, String imgUrl, String shortDescription, String longDescription) {
+    public Game(long id, String title, int year, String genre, String platforms, double score, String imgUrl, String shortDescription, String longDescription) { // Construtor com argumentos.
         this.id = id;
         this.title = title;
         this.year = year;
@@ -46,85 +46,85 @@ public class Game {
         this.longDescription = longDescription;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public void setPlatforms(String platforms) {
-        this.platforms = platforms;
-    }
-
-    public void setScore(double score) {
-        this.score = score;
-    }
-
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
-    }
-
-    public void setShortDescription(String shortDescription) {
-        this.shortDescription = shortDescription;
-    }
-
-    public void setLongDescription(String longDescription) {
-        this.longDescription = longDescription;
-    }
-
-    public long getId() {
+    public long getId() { // Retorna o ID.
         return id;
     }
 
-    public String getTitle() {
+    public void setId(long id) { // Define o ID.
+        this.id = id;
+    }
+
+    public String getTitle() { // Retorna o título.
         return title;
     }
 
-    public int getYear() {
+    public void setTitle(String title) { // Define o título.
+        this.title = title;
+    }
+
+    public int getYear() { // Retorna o ano de lançamento.
         return year;
     }
 
-    public String getGenre() {
+    public void setYear(int year) { // Define o ano de lançamento.
+        this.year = year;
+    }
+
+    public String getGenre() { // Retorna o gênero.
         return genre;
     }
 
-    public String getPlatforms() {
+    public void setGenre(String genre) { // Define o gênero.
+        this.genre = genre;
+    }
+
+    public String getPlatforms() { // Retorna as plataformas.
         return platforms;
     }
 
-    public double getScore() {
+    public void setPlatforms(String platforms) { // Define as plataformas.
+        this.platforms = platforms;
+    }
+
+    public double getScore() { // Retorna a pontuação.
         return score;
     }
 
-    public String getImgUrl() {
+    public void setScore(double score) { // Define a pontuação.
+        this.score = score;
+    }
+
+    public String getImgUrl() { // Retorna a URL da imagem.
         return imgUrl;
     }
 
-    public String getShortDescription() {
+    public void setImgUrl(String imgUrl) { // Define a URL da imagem.
+        this.imgUrl = imgUrl;
+    }
+
+    public String getShortDescription() { // Retorna a descrição curta.
         return shortDescription;
     }
 
-    public String getLongDescription() {
+    public void setShortDescription(String shortDescription) { // Define a descrição curta.
+        this.shortDescription = shortDescription;
+    }
+
+    public String getLongDescription() { // Retorna a descrição longa.
         return longDescription;
     }
 
+    public void setLongDescription(String longDescription) { // Define a descrição longa.
+        this.longDescription = longDescription;
+    }
+
     @Override
-    public int hashCode() {
+    public int hashCode() { // Calcula o hash code com base no ID.
         return Objects.hash(id);
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj) { // Compara objetos com base no ID.
         if (this == obj)
             return true;
         if (obj == null)

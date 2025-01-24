@@ -12,22 +12,22 @@ import com.devgabrel.dslist.dto.GameDTO;
 import com.devgabrel.dslist.dto.GameMinDTO;
 import com.devgabrel.dslist.services.GameService;
 
-@RestController
-@RequestMapping(value = "/games")
+@RestController // Define esta classe como um controlador REST.
+@RequestMapping(value = "/games") // Mapeia requisições para "/games".
 public class GameController {
     
-    @Autowired
+    @Autowired // Injeta a dependência GameService.
     private GameService gameService;
 
-    @GetMapping(value = "/{id}")
-    public GameDTO findById(@PathVariable long id){
-        GameDTO result = gameService.findById(id);
-        return result;
+    @GetMapping(value = "/{id}") // Mapeia GET para "/games/{id}".
+    public GameDTO findById(@PathVariable long id){ // Busca um jogo por ID.
+        GameDTO result = gameService.findById(id); // Chama o serviço para buscar o jogo.
+        return result; // Retorna o jogo encontrado.
     }
 
-    @GetMapping
-    public List<GameMinDTO> findAll(){
-        List<GameMinDTO> result = gameService.findAll();
-        return result;
+    @GetMapping // Mapeia GET para "/games".
+    public List<GameMinDTO> findAll(){ // Lista todos os jogos (dados resumidos).
+        List<GameMinDTO> result = gameService.findAll(); // Chama o serviço para buscar a lista de jogos.
+        return result; // Retorna a lista de jogos.
     }
 }

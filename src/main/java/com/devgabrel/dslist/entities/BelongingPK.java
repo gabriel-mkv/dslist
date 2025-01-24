@@ -6,48 +6,48 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-@Embeddable
+@Embeddable // Define como um tipo embutido.
 public class BelongingPK {
     
-    @ManyToOne
-    @JoinColumn(name = "game_id")
-    private Game game;
+    @ManyToOne // Define relacionamento muitos-para-um com Game.
+    @JoinColumn(name = "game_id") // Coluna de junção na tabela.
+    private Game game; // Referência para a entidade Game.
 
-    @ManyToOne
-    @JoinColumn(name = "list_id")
-    private GameList list;
+    @ManyToOne // Define relacionamento muitos-para-um com GameList.
+    @JoinColumn(name = "list_id") // Coluna de junção na tabela.
+    private GameList list; // Referência para a entidade GameList.
 
-    public BelongingPK() {
+    public BelongingPK() { // Construtor padrão.
     }
 
-    public BelongingPK(Game game, GameList list) {
+    public BelongingPK(Game game, GameList list) { // Construtor com argumentos.
         this.game = game;
         this.list = list;
     }
 
-    public Game getGame() {
+    public Game getGame() { // Retorna a entidade Game.
         return game;
     }
 
-    public void setGame(Game game) {
+    public void setGame(Game game) { // Define a entidade Game.
         this.game = game;
     }
 
-    public GameList getList() {
+    public GameList getList() { // Retorna a entidade GameList.
         return list;
     }
 
-    public void setList(GameList list) {
+    public void setList(GameList list) { // Define a entidade GameList.
         this.list = list;
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode() { // Calcula o hash code com base em Game e GameList.
         return Objects.hash(game, list);
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj) { // Compara objetos com base em Game e GameList.
         if (this == obj)
             return true;
         if (obj == null)
